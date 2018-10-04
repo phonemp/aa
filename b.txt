@@ -1,0 +1,34 @@
+rep= "Y"
+loop do
+print "Enter first number"
+fnum = gets.to_i
+print "Enter first number"
+snum = gets.to_i
+print "Enter operator"
+op = gets.chomp
+if op == "+"
+a =fnum+snum
+print a
+elsif op == "-"
+a =fnum-snum
+print a
+elsif op == "*"
+a =fnum*snum
+print a
+elsif op == "/"
+a =fnum/snum
+print a
+else 
+print "error"
+end
+File.open("d.txt","a") do |line|
+line.puts "\r" +fnum.to_s 
+line.puts "\r" +snum.to_s 
+line.puts "\r" + op.to_s
+line.puts "\r" + a.to_s
+end
+print "Do you want to repeat?Y/N"
+rep = gets.chomp
+break if(rep=="N")
+end
+
